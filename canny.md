@@ -2,11 +2,11 @@
 
 Here we will learn about canny edge detection. There are 4 most important steps in it. Let's go through it one by one.
 
-### Gaussian Noise Filtering
+### 1 - Gaussian Noise Filtering
 
-1. Filter out any noise. The Gaussian filter is used for this purpose. 
+ Filter out any noise. The Gaussian filter is used for this purpose. 
 
-### Intensity Gradient
+### 2 - Intensity Gradient Convolution
 
 2. Find the intensity gradient of the image. Apply a pair of convolution masks in x and y directions. Consequently, we find the gradient strength by taking the combined L2 norm and calculate the direction by finding arctan in x and y direction. .
 The direction is rounded to one of four possible angles (namely 0, 45, 90 or 135).
@@ -33,15 +33,14 @@ G = \sqrt{ G_{x}^{2} + G_{y}^{2} } \\
 \end{array}
 ```
 
-### Non-maximum suppression
-
-3. This removes pixels that are not considered to be part of an edge. Hence, only thin lines (candidate edges) will remain.
-### Hysteresis Thresholding
-4. This is the final step in Canny Edge Detection. Here we use two thresholds, upper and lower
+### 3 - Non-maximum suppression
+This removes pixels that are not considered to be part of an edge. Hence, only thin lines (candidate edges) will remain.
+### 4 - Hysteresis Thresholding
+This is the final step in Canny Edge Detection. Here we use two thresholds, upper and lower
    a) If a pixel gradient is higher than the upper threshold, the pixel is accepted as an edge
    b) If a pixel gradient value is below the lower threshold, then it is rejected.
    c) If the pixel gradient is between the two thresholds, then it will be accepted only if it is connected to a pixel that is above the upper threshold. Sir John Canny recommended a upper:lower ratio between 2:1 and 3:1.
-
+<!---
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
@@ -73,3 +72,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+--->
