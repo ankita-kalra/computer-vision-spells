@@ -11,7 +11,7 @@ Here we will learn about canny edge detection. There are 4 most important steps 
 2. Find the intensity gradient of the image. Apply a pair of convolution masks in x and y directions. Consequently, we find the gradient strength by taking the combined L2 norm and calculate the direction by finding arctan in x and y direction. .
 The direction is rounded to one of four possible angles (namely 0, 45, 90 or 135).
 
-'''
+```
 G_{x} = \begin{bmatrix}
 -1 & 0 & +1  \\
 -2 & 0 & +2  \\
@@ -23,15 +23,15 @@ G_{y} = \begin{bmatrix}
 0 & 0 & 0  \\
 +1 & +2 & +1
 \end{bmatrix}
-'''
+```
 
 
-'''
+```
 \begin{array}{l}
 G = \sqrt{ G_{x}^{2} + G_{y}^{2} } \\
 \theta = \arctan(\dfrac{ G_{y} }{ G_{x} })
 \end{array}
-'''
+```
 
 ### Non-maximum suppression
 
